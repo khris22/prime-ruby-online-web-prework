@@ -1,8 +1,9 @@
-def prime?(n) 
-  return false if n < 2
-  return true if n == 2
-  (2..Math.sqrt(n).ceil).each do |x|
-   return false if n % x == 0
-  end
-  true
+def prime? (n)
+    if n <= 1
+        false
+    elsif n == 2
+        true
+    else 
+        (2..n/2).none? { |i| n % i == 0}
+    end
 end
